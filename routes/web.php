@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SalesReportController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StockController;
 use App\Models\Report;
 use App\Models\Stock;
@@ -32,7 +32,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     $total_costs = Stock::sum('price');
     $total_product = Stock::count();
-    $latest_stocks = Stock::latest()->with('supplier')->limit(8)->get();
+    $latest_stocks = Stock::latest()->with('supplier')->limit(6)->get();
 
     $total_reports = Report::count();
 
@@ -49,12 +49,17 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('stocks', [StockController::class, 'index'])->name('stocks');
+    Route::get('stocks', [StockController::class, 'initialStocks'])->name('stocks');
+    Route::get('queryStocks', [StockController::class, 'queryStocks'])->name('queryStocks');
     // same but this is editable
-    Route::get('managements', [StockController::class, 'index'])->name('management');
+    Route::get('management', [StockController::class, 'management'])->name('management');
+    Route::delete('management/{stock}', [StockController::class, 'destroy'])->name('reduce-stock');
+    Route::put('management/{stock}/update', [StockController::class, 'update'])->name('update-stock');
+    Route::delete('management/{stock}/del', [StockController::class, 'deleteImmediately'])->name('delete-stock');
 
-    Route::resource('reports', SalesReportController::class);
-    Route::resource('suppliers', SalesReportController::class);
+    Route::get('reports', [ReportController::class, 'reports'])->name('reports');
+    Route::get('queryReports', [ReportController::class, 'queryReports'])->name('queryReports');
+
 });
 
 require __DIR__ . '/auth.php';

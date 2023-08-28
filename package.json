@@ -20,6 +20,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@material-tailwind/react": "^2.0.8",
         "react-hot-toast": "^2.4.1",
         "react-icons": "^4.10.1"
     }

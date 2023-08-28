@@ -5,16 +5,14 @@ import { useState } from 'react'
 import StocksTable from './partials/Table'
 
 const Index = ({ auth, initialStocks }) => {
-
     const [stocks, setStocks] = useState(initialStocks);
-
     return (
         <Authenticated
             user={auth.user}
-            header={'Stocks'}
+            header={'Management'}
         >
             <Toast />
-            <Head title="Stocks" />
+            <Head title="Management" />
 
             <StocksTable stocks={stocks} setStocks={setStocks} />
 

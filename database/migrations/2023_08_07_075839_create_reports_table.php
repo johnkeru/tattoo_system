@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->string('report_name');
+            $table->string('status')->default('new');
             $table->json('report_data');
             $table->date('report_date');
             $table->timestamps();

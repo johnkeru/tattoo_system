@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         return [
             [
                 'name' => fake()->name(),
-                'email' => 'admin@gmail.com',
+                'email' => 'admin@admin.com',
                 'role' => 'admin',
                 'email_verified_at' => now(),
                 'password' => Hash::make('admin'),
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => fake()->name(),
-                'email' => 'admin2@gmail.com',
+                'email' => 'admin2@admin.com',
                 'role' => 'admin',
                 'email_verified_at' => now(),
                 'password' => Hash::make('admin2'),
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => fake()->name(),
-                'email' => 'admin3@gmail.com',
+                'email' => 'admin3@admin.com',
                 'role' => 'admin',
                 'email_verified_at' => now(),
                 'password' => Hash::make('admin3'),

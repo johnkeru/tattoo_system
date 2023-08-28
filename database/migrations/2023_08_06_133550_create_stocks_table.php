@@ -13,9 +13,12 @@ return new class extends Migration {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
+            $table->string('status')->default('new');
             $table->string('item_name'); // The name of the tattoo supply item.
+            $table->string('description'); // The name of the tattoo supply item.
             $table->integer('quantity'); // The current quantity of the item in stock.
             $table->integer('price'); // The price of the item.
+            $table->integer('original_price'); // The original price of the item.
             $table->integer('reorder_point'); // The minimum quantity at which the item needs to be reordered.
             $table->integer('reorder_quantity'); // The quantity to be reordered when the stock reaches the reorder point.
             $table->foreignId('supplier_id')->constrained('suppliers'); // A foreign key referencing the "Suppliers" table, indicating the supplier of the item.

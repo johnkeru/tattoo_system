@@ -9,6 +9,14 @@ class Stock extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'item_name',
+        'description',
+        'reorder_point',
+        'reorder_quantity',
+        'image'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -18,4 +26,9 @@ class Stock extends Model
     {
         return $this->belongsTo(Supplier::class);
     }
+
+    // public function product()
+    // {
+    //     return $this->hasOneThrough(Product::class, Supplier::class);
+    // }
 }

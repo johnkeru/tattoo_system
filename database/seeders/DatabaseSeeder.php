@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             SupplierSeeder::class,
             ProductSeeder::class,
             StockSeeder::class,
-            ReportSeeder::class
+            // ReportSeeder::class
         ]);
     }
 }
