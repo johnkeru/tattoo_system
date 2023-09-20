@@ -1,5 +1,5 @@
 import React from 'react'
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 
 const Welcome = () => {
     return (
@@ -30,6 +30,13 @@ const Welcome = () => {
                         <h1 className='text-4xl font-bold mb-10'>Significance of the study</h1>
                         <p className='text-2xl'>The study targets the main Tattoo Project branch limited as it handles the stocks and materials that are distributed to all shops associated with it.</p>
                     </div>
+                </div>
+
+
+                <div className='w-2/4 mx-auto my-20'>
+                    <Link href='/login' className='bg-blue-gray-700 p-4 border-2 border-blue-gray-200 hover:border-blue-gray-50 px-10 rounded-md text-3xl font-bold'>
+                        Get Started
+                    </Link>
                 </div>
             </div>
         </div>

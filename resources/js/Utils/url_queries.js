@@ -1,4 +1,4 @@
-export function getQueryParameters(urlString, query, setUrl) {
+export function     getQueryParameters(urlString, query, setUrl) {
     const url = new URL(urlString);
     const queryParams = url.searchParams;
 
