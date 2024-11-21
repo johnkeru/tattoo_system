@@ -4,14 +4,17 @@ Follow these steps to set up the system:
 
 ### Prerequisites
 
-Make sure you have the following technologies installed:
+Ensure the following technologies are installed on your machine:
 
-- **GIT**
+- **Git**
 - **PHP:** Version 8 or above
 - **Composer:** Version 2.x.x
 - **Node.js:** Version 17 or above
+- **MySQL** or a compatible database management system
 
 ### Clone the Repository
+
+Clone the project repository to your local machine:
 
 ```bash
 git clone https://github.com/johnkeru/tattoo_system.git
@@ -19,46 +22,70 @@ git clone https://github.com/johnkeru/tattoo_system.git
 
 ### Installation
 
-1. Open your command prompt and navigate to the desired installation folder for the system.
+1. **Navigate to the project folder:**
+   Open your command prompt or terminal and move to the folder where you cloned the repository.
 
-2. Run the following commands to install the necessary dependencies:
-    ```bash
-    composer require
-    npm install
-    ```
+   ```bash
+   cd tattoo_system
+   ```
 
-3. Once you've successfully installed the dependencies, update the `.env` file. If you're using Windows, run:
-    ```bash
-    copy .env.example .env
-    ```
-   If you're using macOS, run:
-    ```bash
-    cp .env.example .env
-    ```
+2. **Install dependencies:**
+   Run the following commands to install the necessary backend and frontend dependencies:
 
-4. Edit the `.env` file with your preferred text editor. Before doing so, ensure you've created a database in your MySQL server. You need the database name for the `.env` file to establish a connection. Locate the `DB_DATABASE` field in the `.env` file and set it to the name of the database you created. For example:
-    ```dotenv
-    DB_DATABASE=your_db_name
-    ```
+   ```bash
+   composer install
+   npm install
+   ```
 
-5. Save the `.env` file.
+3. **Set up the `.env` file:**
+   - On **Windows**, run:
+     ```bash
+     copy .env.example .env
+     ```
+   - On **macOS** or **Linux**, run:
+     ```bash
+     cp .env.example .env
+     ```
 
-6. Now, you can run the following commands to set up the database:
-    ```bash
-    php artisan migrate
-    php artisan db:seed
-    ```
+4. **Update the `.env` file:**
+   Open the `.env` file in your preferred text editor and update the database configuration fields. Ensure you have created a database in your MySQL server beforehand. Example settings:
 
-7. Open Visual Studio Code and create two terminals for frontend and backend development.
+   ```dotenv
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-    - In the first terminal, run:
-        ```bash
-        npm run dev
-        ```
+5. **Migrate and seed the database:**
+   Set up the database schema and seed it with initial data:
 
-    - In the second terminal, run:
-        ```bash
-        php artisan serve
-        ```
+   ```bash
+   php artisan migrate --seed
+   ```
 
-You're all set! The system is now up and running.
+6. **Start the development servers:**
+   Open your code editor (e.g., Visual Studio Code) and create two terminals for running the backend and frontend servers:
+
+   - **Backend:** Run the following command in the first terminal:
+     ```bash
+     php artisan serve
+     ```
+
+   - **Frontend:** Run the following command in the second terminal:
+     ```bash
+     npm run dev
+     ```
+
+### Access the System
+
+After completing the above steps, open your web browser and navigate to the following URL to access the system:
+
+```
+http://127.0.0.1:8000
+```
+
+Congratulations! The system is now successfully installed and running.
+

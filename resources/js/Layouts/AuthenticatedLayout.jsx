@@ -30,7 +30,7 @@ export default function AuthenticatedLayout({ user, header = "Dashboard", childr
                     <NavLink text='Dashboard' Icon={BiSolidDashboard} href="dashboard" />
                     <NavLink text='Stock/Supplies' Icon={AiOutlineStock} href='stocks' />
                     <NavLink text='Stock Management' Icon={MdManageAccounts} href='management' manage_badge={manage_badge} />
-                    <NavLink text='Reports and Analytics' Icon={SiSimpleanalytics} href='reports' reports_badge={reports_badge} />
+                    {/* <NavLink text='Reports and Analytics' Icon={SiSimpleanalytics} href='reports' reports_badge={reports_badge} /> */}
                     <hr className="my-5 border-blue-gray-700" />
                     <NavLink text={user.email} Icon={CgProfile} href='profile' />
                     <NavLink text='Logout' Icon={HiOutlineLogout} href={route('logout')} method="post" as="button" />

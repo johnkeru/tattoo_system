@@ -1,46 +1,66 @@
-import React from 'react'
+import React from 'react';
 import { Head, Link } from '@inertiajs/react';
 
 const Welcome = () => {
     return (
         <div
-            style={{
-                backgroundImage: 'url(hero.jpeg)',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-            }}
-            className='w-screen h-screen relative'
+            className="w-full h-screen bg-cover bg-center relative"
+            style={{ backgroundImage: 'url(hero.jpeg)' }}
         >
             <Head title="Welcome" />
 
-            <div className='bg-slate-800/70 absolute top-0 left-0 w-full h-full' />
-            <div className='absolute top-0 left-0 w-full h-full text-white text-center'>
-                <div className='w-2/4 mx-auto my-20'>
-                    <h1 className='text-7xl font-bold mb-10'>OSSMSTP</h1>
-                    <p className='text-3xl leading-10'>Online Supplies and Service Management System for Tattoo Project is an application to help the stock management of Tattoo project for an accurate result of the needed materials for the shop.</p>
-                </div>
+            {/* Enhanced Overlay */}
+            <div className="absolute inset-0 bg-black/80"></div>
 
-                <div className='flex justify-evenly'>
-                    <div className='w-1/3'>
-                        <h1 className='text-4xl font-bold mb-10'>Objective of the Study</h1>
-                        <p className='text-2xl'>To help the employees to have an efficient and useful tool for managing the products and materials used in the shop</p>
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 sm:px-8">
+                {/* Hero Section */}
+                <section className="text-center mb-16">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
+                        OSSMSTP
+                    </h1>
+                    <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto">
+                        Online Supplies and Service Management System for Tattoo
+                        Project is an application designed to help manage stock
+                        accurately, ensuring the shop has the materials it needs.
+                    </p>
+                </section>
+
+                {/* Features Section */}
+                <section className="flex flex-col sm:flex-row justify-center items-center sm:space-x-8 space-y-8 sm:space-y-0 w-full max-w-5xl">
+                    <div className="text-center sm:w-1/2 px-4">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                            Objective of the Study
+                        </h2>
+                        <p className="text-sm sm:text-lg leading-relaxed">
+                            To provide employees with an efficient tool for managing
+                            the products and materials used in the shop.
+                        </p>
                     </div>
-
-                    <div className='w-1/3'>
-                        <h1 className='text-4xl font-bold mb-10'>Significance of the study</h1>
-                        <p className='text-2xl'>The study targets the main Tattoo Project branch limited as it handles the stocks and materials that are distributed to all shops associated with it.</p>
+                    <div className="text-center sm:w-1/2 px-4">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                            Significance of the Study
+                        </h2>
+                        <p className="text-sm sm:text-lg leading-relaxed">
+                            The study focuses on the main Tattoo Project branch,
+                            ensuring efficient stock and material distribution across
+                            all associated shops.
+                        </p>
                     </div>
-                </div>
+                </section>
 
-
-                <div className='w-2/4 mx-auto my-20'>
-                    <Link href='/login' className='bg-blue-gray-700 p-4 border-2 border-blue-gray-200 hover:border-blue-gray-50 px-10 rounded-md text-3xl font-bold'>
+                {/* Call-to-Action */}
+                <section className="mt-12">
+                    <Link
+                        href="/login"
+                        className="bg-blue-600 hover:bg-blue-500 text-white text-lg sm:text-2xl font-bold py-3 px-8 rounded-md transition duration-300"
+                    >
                         Get Started
                     </Link>
-                </div>
+                </section>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Welcome
+export default Welcome;
