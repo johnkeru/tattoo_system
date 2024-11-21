@@ -51,18 +51,18 @@ git clone https://github.com/johnkeru/tattoo_system.git
    DB_PASSWORD=your_password  
    ```  
 
-4. **Generate the application key:**  
-   Run the following command to generate a unique application key:  
-   ```bash  
-   php artisan key:generate  
-   ```  
-
-5. **Install dependencies:**  
+4. **Install dependencies:**  
    Run the following commands to install the necessary backend and frontend dependencies:  
 
    ```bash  
    composer install  
    npm install  
+   ```  
+
+5. **Generate the application key:**  
+   Run the following command to generate a unique application key:  
+   ```bash  
+   php artisan key:generate  
    ```  
 
 6. **Migrate and seed the database:**  
