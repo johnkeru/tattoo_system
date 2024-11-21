@@ -29,15 +29,7 @@ git clone https://github.com/johnkeru/tattoo_system.git
    cd tattoo_system
    ```
 
-2. **Install dependencies:**
-   Run the following commands to install the necessary backend and frontend dependencies:
-
-   ```bash
-   composer install
-   npm install
-   ```
-
-3. **Set up the `.env` file:**
+2. **Set up the `.env` file:**
    - On **Windows**, run:
      ```bash
      copy .env.example .env
@@ -47,7 +39,21 @@ git clone https://github.com/johnkeru/tattoo_system.git
      cp .env.example .env
      ```
 
-4. **Update the `.env` file:**
+3. **Generate the application key:**
+   Run the following command to generate a unique application key:
+   ```bash
+   php artisan key:generate
+   ```
+
+4. **Install dependencies:**
+   Run the following commands to install the necessary backend and frontend dependencies:
+
+   ```bash
+   composer install
+   npm install
+   ```
+
+5. **Update the `.env` file:**
    Open the `.env` file in your preferred text editor and update the database configuration fields. Ensure you have created a database in your MySQL server beforehand. Example settings:
 
    ```dotenv
@@ -59,14 +65,18 @@ git clone https://github.com/johnkeru/tattoo_system.git
    DB_PASSWORD=your_password
    ```
 
-5. **Migrate and seed the database:**
+6. **Migrate and seed the database:**
    Set up the database schema and seed it with initial data:
 
    ```bash
    php artisan migrate --seed
    ```
+   Or, if you want to refresh and seed the database:
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-6. **Start the development servers:**
+7. **Start the development servers:**
    Open your code editor (e.g., Visual Studio Code) and create two terminals for running the backend and frontend servers:
 
    - **Backend:** Run the following command in the first terminal:
@@ -88,4 +98,3 @@ http://127.0.0.1:8000
 ```
 
 Congratulations! The system is now successfully installed and running.
-
